@@ -16,8 +16,27 @@
 
 // Create the Factory class bellow:
 
+class Factory {
+
+    make = 'Mazda';
+    location = 'USA';
+    airbags = true;
+    abs = true;
+    warranty = '(60,000 / 3 years)';
 
 
+    constructor(make, location, airbags, abs, warranty) {
+        this.make = make;
+        this.location = location;
+        this.airbags = airbags;
+        this.abs = abs;
+        this.warranty = warranty;
+    }
+
+    massBuild(quantity, options) {}
+
+    customerBuild() {}
+}
 
 // CREATE A SUB-CLASS CALLED CAR
 // It should extend from Factory.
@@ -26,7 +45,39 @@
 // Car should also have the following additional properties: enginesize (4), navigation (true), backupcamera (true), warranty (100,000 miles / 5 years)
 // Write your code below:
 
+class Car extends Factory {
 
+    model;
+    doors;
+    color;
+    enginetype;
+    transmission;
+    trim;
+    wheelstrim;
+    audio;
+    seatstrim;
+    moonroof;
+
+
+
+    constructor(make, location, airbags, abs, warranty, model, doors, color, enginetype, transmission, trim, wheelstrim, audio, seatstrim, moonroof) {
+        super(make, location, airbags, abs, warranty);
+        this.model = model;
+        this.doors = doors;
+        this.color = color;
+        this.enginetype = enginetype;
+        this.transmission = transmission;
+        this.trim = trim;
+        this.wheelstrim = wheelstrim;
+        this.audio = audio;
+        this.seatstrim = seatstrim;
+        this.moonroof = moonroof;
+        this.enginesize = 4;
+        this.navigation = true;
+        this.backupcamera = true;
+        this.warranty = '(100,000 / 5 years)';
+    }
+}
 
 
 // CREATE A SUB-CLASS CALLED SPORT
