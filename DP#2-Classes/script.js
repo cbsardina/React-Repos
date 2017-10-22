@@ -32,10 +32,13 @@ class Factory {
 
     //TODO: rewrite for unspecified array.size()
     customerBuild(car, options) {
-        console.log('Building one ' + car.valueOf().color + ' ' + car.valueOf().trim + ' ' + car.valueOf().model + ' with the following options: ' + options[0] + ', ' + options[1] + ', ' + options[2] + '.');
+        let opts = '';
+        options.forEach((option) => {
+            opts += option;
+        })
+        console.log('Building one ' + car.valueOf().color + ' ' + car.valueOf().trim + ' ' + car.valueOf().model + ' with the following options: ' + options + '.');
     }
-
-}
+} // ===== end Factory class =====
 
 // CREATE A SUB-CLASS CALLED CAR
 // It should extend from Factory.
@@ -176,9 +179,9 @@ miataRf.massBuild(15000, miataRf);
 // It should read: "Building one black Grand Touring Miata-RF with the following options: hid headlights, sports suspension, leather steering wheel, heated seats, adaptive cruise control"
 // Write your code below:
 miataRf.color = 'black';
-let options2 = ['hid headlights', 'sports suspension', 'leather steering wheel', 'heated seats', 'adaptive cruise control'];
+let options2 = ['hid headlights', ' sports suspension', ' leather steering wheel', ' heated seats', ' adaptive cruise control'];
 
-
+miataRf.customerBuild(miataRf, options2);
 
 // TRAIL BLAZER MASS PRODUCTION
 // The Trail Blazer should inherit from truck.
@@ -187,24 +190,24 @@ let options2 = ['hid headlights', 'sports suspension', 'leather steering wheel',
 // Write your 'trailBlazer' instance below:
 // Write your code below:
 
-
-
-
+let trailBlazer = new Truck('Trail Blazer', 'blue', 8, true, 'standard', true);
+trailBlazer.doors = 2;
+trailBlazer.trim = 'sport';
 
 // Print trailBlazer. It should have all the above properties. Plus, the extended warranty.
 // Write your code below:
 
-
-
+console.log(trailBlazer);
 
 // Print trailBlazer, calling massBuid(). It should build 35000 trucks.
 // It should print: "Building 35000 blue Sport Trail Blazer's."
 // Wrint your code below:
 
-
-
-
+trailBlazer.massBuild(35000, trailBlazer);
 
 // Print trailBlazer, calling customerBuild(). It should build a red Trail Blazer with the following options, as an array: seat warmers, tinted windows, fog lamps.
 // It should print: "Building one red Sport Trail Blazer with the following options: seat warmers, tinted windows, fog lamps"
 // Write your code below:
+
+let options3 = ['seat warmers', ' tinted windows', ' fog lamps'];
+trailBlazer.customerBuild(trailBlazer, options3);
