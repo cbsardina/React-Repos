@@ -18,14 +18,7 @@
 
 class Factory {
 
-    make = 'Mazda';
-    location = 'USA';
-    airbags = true;
-    abs = true;
-    warranty = '(60,000 / 3 years)';
-
-
-    constructor(make, location, airbags, abs, warranty) {
+    constructor({make = 'Mazda'}={}, {location = 'USA'}={}, {airbags = true}={}, {abs = true}={}, {warranty = '(60,000 / 3 years)'}={}) {
         this.make = make;
         this.location = location;
         this.airbags = airbags;
@@ -33,9 +26,12 @@ class Factory {
         this.warranty = warranty;
     }
 
-    massBuild(quantity, options) {}
+    massBuild(quantity, options) {
+        console.log('Building ' + quantity + ' ' + options.valueOf().color + ' ' + options.valueOf().trim + ' ' + options.valueOf().model + ' with the following options: ' + options.valueOf().audio + ', ' + options.valueOf().seatstrim +".");
+    }
 
     customerBuild() {}
+
 }
 
 // CREATE A SUB-CLASS CALLED CAR
@@ -47,21 +43,9 @@ class Factory {
 
 class Car extends Factory {
 
-    model;
-    doors;
-    color;
-    enginetype;
-    transmission;
-    trim;
-    wheelstrim;
-    audio;
-    seatstrim;
-    moonroof;
 
-
-
-    constructor(make, location, airbags, abs, warranty, model, doors, color, enginetype, transmission, trim, wheelstrim, audio, seatstrim, moonroof) {
-        super(make, location, airbags, abs, warranty);
+    constructor(model, doors, color, enginetype, transmission, trim, wheelstrim, audio, seatstrim, moonroof, {warranty = '(100,000 / 5 yars)'}={}) {
+        super(warranty);
         this.model = model;
         this.doors = doors;
         this.color = color;
@@ -75,7 +59,7 @@ class Car extends Factory {
         this.enginesize = 4;
         this.navigation = true;
         this.backupcamera = true;
-        this.warranty = '(100,000 / 5 years)';
+        this.warranty = warranty;
     }
 }
 
@@ -86,8 +70,25 @@ class Car extends Factory {
 // Sports cars should also have the following additional properties: moonroof (false), enginetype (gasoline), convertible (true), doors (2)
 // Write your code below:
 
+class Sport extends Car {
 
+    constructor(model, {doors = 2}={}, color, {enginetype = 'gasoline'}={}, transmission, trim, wheelstrim, audio, seatstrim, {moonroof = false}={}, warranty, {convertible = true}={}) {
+        super(model, doors, color, enginetype, transmission, trim, wheelstrim, audio, seatstrim, moonroof, warranty);
+        this.model = model;
+        this.doors = doors;
+        this.color = color;
+        this.enginetype = enginetype;
+        this.transmission = transmission;
+        this.trim = trim;
+        this.wheelstrim = wheelstrim;
+        this.audio = audio;
+        this.seatstrim = seatstrim;
+        this.moonroof = moonroof;
+        this.warranty = warranty;
+        this.convertible = convertible;
 
+    }
+}
 
 // CREATE A SUB-CLASS CALLED TRUCK
 // Yes...this Mazda factory makes trucks....
@@ -96,8 +97,20 @@ class Car extends Factory {
 // Truck should also have the following properties, standard: backupcamera (true), audio (basic)
 // It should also inherit the warranty property so we can extend it to: 150,000 miles / 6 years.
 // Write your code below:
+class Truck extends Factory {
 
-
+    constructor(model, color, enginesize, hitch, bed, navigation) {
+        super(warranty = '(150,000 / 6 years');
+        this.model = model;
+        this.color = color;
+        this.enginesize = enginesize;
+        this.hitch = hitch;
+        this.bed = bed;
+        this.navigation = navigation;
+        this.backupcamera = true;
+        this.audio = 'basic';
+    }
+}
 
 
 // LET'S BUILD SOME CARS AND TRUCKS!
@@ -108,21 +121,18 @@ class Car extends Factory {
 
 // Write your 'mazda3' instance below:
 
+let mazda3 = new Car('mazda3', 2, 'red', 'hybrid', 'automatic', 'touring', 'base', 'premium', 'leather', true);
 
 // Print mazda3. I should have all the above properties.
 // Write your code below:
 
-
-
-
+console.log(mazda3);
 
 // Print calling massBuild(), building 35000 cars.
 // It should print: "Building 35000 Red Touring Mazda3's."
 // Write your code below:
 
-
-
-
+mazda3.massBuild(3500, mazda3);
 
 // Print, calling customerBuild(), building one yellow mazda3 with the following options, as an array: weather package, satellite radio, rear spoiler.
 // It should read: "Building one yellow Touring Mazda3 with the following options: weather package, satellite radio, rear spoiler"
