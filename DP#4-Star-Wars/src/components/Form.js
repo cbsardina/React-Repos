@@ -25,19 +25,25 @@ export default class Form extends Component {
 	render() {
 		return (
 		<div className="container col-sm-4">
-			<form className="card" onSubmit={this._handleSubmit}>
-				<div className="card-block">
-					<label htmlFor="pilot">
-						Enter pilot's name:
-					</label>
-					<input  className="form-control" onChange={this._handleNameChange} name="pilot" type="text"/>
-				</div>
-				<div className="pilotName h2">{this.state.pilotName}</div>
-				<input className="btn btn-primary width-50%" type="submit" value="Submit"/>
-			</form>
+			<div className="card text-center">
+				<form className="card-block" onSubmit={this._handleSubmit}>
+					<h4 className="card-title">
+						What is your name, pilot?
+					</h4>
+					<input className="form-control" onChange={this._handleNameChange} name="pilot" type="text"/>
+					<div className="card-block">
+						<div>
+							<input className="btn btn-primary" type="submit" value="Submit"/>
+							<h2 className="card-title">{this.state.pilotName}</h2>
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
+
 		)
 	}
+
 }
 
 //  FORM: SUBMIT METHOD
