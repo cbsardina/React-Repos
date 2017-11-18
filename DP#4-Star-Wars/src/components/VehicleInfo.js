@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class VehicleInfo extends Component {
 	render() {
 		return (
-			<div className="card text-center col-sm-3 p-0 m-4">
+			<div className="card text-center col-lg-3 p-0 m-4">
 				<div className="card-block p-3 m-0">
 					<h3 className="card-title">{this.props.vhcl.name}</h3>
 					<p className="card-text">{this.props.vhcl.model}</p>

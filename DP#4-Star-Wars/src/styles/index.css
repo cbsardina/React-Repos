@@ -11,3 +11,7 @@ body {
 h2 {
   padding-top: 1em;
 }
+.row {
+  display: flex;
+  justify-content: center;
+}

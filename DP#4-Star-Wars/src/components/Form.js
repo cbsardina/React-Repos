@@ -24,7 +24,7 @@ export default class Form extends Component {
 
 	render() {
 		return (
-		<div className="container col-sm-4">
+		<div className="container col-lg-4">
 			<div className="card text-center">
 				<form className="card-block" onSubmit={this._handleSubmit}>
 					<h4 className="card-title">
