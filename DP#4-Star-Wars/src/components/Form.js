@@ -11,13 +11,13 @@ export default class Form extends Component {
 		}
 	}
 
-	_handleNameChange = (event) => {
+	handleNameChange = (event) => {
 		let inputName = event.target.name;
 		this.setState({[inputName]: event.target.value});
 		console.log(event.target.value)
 	}
 
-	_handleSubmit = (event) => {
+	handleSubmit = (event) => {
 		event.preventDefault();
 		this.setState({pilotName: this.state.pilot})
 	}
@@ -26,11 +26,11 @@ export default class Form extends Component {
 		return (
 		<div className="container col-lg-4">
 			<div className="card text-center">
-				<form className="card-block" onSubmit={this._handleSubmit}>
+				<form className="card-block" onSubmit={this.handleSubmit}>
 					<h4 className="card-title">
 						What is your name, pilot?
 					</h4>
-					<input className="form-control" onChange={this._handleNameChange} name="pilot" type="text"/>
+					<input className="form-control" onChange={this.handleNameChange} name="pilot" type="text"/>
 					<div className="card-block">
 						<div>
 							<input className="btn btn-primary" type="submit" value="Submit"/>
@@ -45,9 +45,3 @@ export default class Form extends Component {
 	}
 
 }
-
-//  FORM: SUBMIT METHOD
-// handleSubmit below:
-// See form lesson for details.
-// Once the form is sumbited, two things need to happen: set the state of pilot to the input value.
-// Then, set the value of the input back to an empty string.
