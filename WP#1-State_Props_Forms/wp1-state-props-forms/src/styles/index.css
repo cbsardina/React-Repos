@@ -3,3 +3,21 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+/** * * NavBAR.js * * * */
+header.row {
+  background-color: rgb(0,133,209);
+  padding: 1em;
+}
+div.col-lg-2 {
+  padding-right: 0;
+}
+div.col-lg-4 {
+  display: flex;
+  align-self: center;
+  padding-left: 0;
+}
+h1.App-title {
+  font-size: 3em;
+  color: #ffffff;
+}

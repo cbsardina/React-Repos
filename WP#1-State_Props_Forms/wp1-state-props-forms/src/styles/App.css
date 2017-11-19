@@ -1,12 +1,11 @@
 /** * * * * DEFAULT INITIAL STYLING * * * * **/
 .App {
   text-align: center;
-  margin: 10px;           /* added */
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 50px;
 }
 
 .App-header {
@@ -27,12 +26,4 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
-/** * * ADDED * * **/
-.card{
-  margin: 5px;
-}
-
-.form{
-  text-align: center;
 }
