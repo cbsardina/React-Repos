@@ -2,11 +2,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: rgb(60, 61, 60);
 }
 
 /** * * NavBAR.js * * * */
 header.row {
-  background-color: rgb(0,133,209);
+  background: rgb(0,133,209);
+  background: linear-gradient(rgb(0,133,209) 85%, rgb(90,187,234)) 15%;
   padding: 1em;
 }
 div.col-lg-2 {
