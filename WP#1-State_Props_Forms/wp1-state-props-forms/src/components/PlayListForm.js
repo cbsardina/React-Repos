@@ -7,8 +7,8 @@ export default class PlayListForm extends Component {
 
 		this.state = {
 		 	userName: '',
-		 	artistBand: '',
 		 	songTitle: '',
+		 	songArtist: '',
 		 	songNotes: ''
 		}
 	} // end constructor()
