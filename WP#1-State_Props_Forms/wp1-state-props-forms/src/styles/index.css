@@ -4,7 +4,9 @@ body {
   font-family: sans-serif;
   background-color: rgb(60, 61, 60);
 }
-
+.row {
+  display: flex;
+}
 /** * * NavBAR.js * * * */
 header.row {
   background: rgb(0,133,209);
@@ -22,4 +24,9 @@ div.col-lg-4 {
 h1.App-title {
   font-size: 3em;
   color: #ffffff;
+}
+/** * * PlayListForm * * **/
+label {
+  display: flex;
+  color: white;
 }

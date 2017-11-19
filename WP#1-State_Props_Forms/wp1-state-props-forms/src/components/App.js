@@ -9,10 +9,10 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar/>
-        {/** * to be removed * * */}
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+          <div className="row">
+              <PlayListForm/>
+              <PlayList/>
+          </div>
       </div>
     );
   }

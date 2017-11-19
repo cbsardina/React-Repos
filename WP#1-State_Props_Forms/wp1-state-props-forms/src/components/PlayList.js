@@ -18,6 +18,14 @@ export default class PlayList extends Component {
 			this.setState({songs: data});
 			console.log("state", this.state.songs);
 		})
-	}
+	} // end componentDidMount()
+
+	render() {
+		return(
+			<div className="container col-4">
+				<h1>PLACEHOLDER</h1>
+			</div>
+		)
+	} //end render()
 
 } // end PlayListItem
