@@ -23,7 +23,7 @@ export default class PlayList extends Component {
 	render() {
 		return(
 			<div className="col-6">
-				<h1>PLACEHOLDER</h1>
+				<PlayListItem/>
 			</div>
 		)
 	} //end render()
