@@ -61,7 +61,7 @@ export default class PlayListForm extends Component {
 
 	render() {
 		return(
-			<div className="container col-4">
+			<div className="col-6">
 				<form onSubmit={this.handleSubmit}>
 					<div className="form-group">
 						<label>User Name:</label>

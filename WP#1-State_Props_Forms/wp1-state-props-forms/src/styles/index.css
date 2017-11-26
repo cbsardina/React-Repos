@@ -30,3 +30,7 @@ label {
   display: flex;
   color: white;
 }
+/** * * Main Body * * * */
+.col-6 {
+  margin: 1em auto;
+}
