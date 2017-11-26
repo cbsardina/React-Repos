@@ -12,7 +12,7 @@ class App extends Component {
           <div className="container">
               <div className="row">
                   <PlayListForm/>
-                  <PlayList/>
+                  <PlayList sng={this.state.songs}/>
               </div>
           </div>
       </div>

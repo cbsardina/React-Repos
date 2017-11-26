@@ -23,7 +23,11 @@ export default class PlayList extends Component {
 	render() {
 		return(
 			<div className="col-6">
-				<PlayListItem/>
+				{this.props.map((s) => {
+					return (
+						<PlayListItem key={s.songs} sng={s}/>
+					)
+				})}
 			</div>
 		)
 	} //end render()
