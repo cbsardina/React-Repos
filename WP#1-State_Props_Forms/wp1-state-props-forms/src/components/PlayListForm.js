@@ -16,10 +16,10 @@ export default class PlayListForm extends Component {
 	handleFormChange = (event) => {
 		let inputName = event.target.name;
 		this.setState(
-			{inputName: event.target.value}
+			{[inputName]: event.target.value}
 		);
 		console.log(event.target.value)
-	} // end handleFormChange fn
+	}; // end handleFormChange fn
 
 	addToList = (event) => {
 		event.preventDefault();
@@ -57,12 +57,12 @@ export default class PlayListForm extends Component {
 				songTitle:''
 			}
 		);
-	} // end addToList fn
+	}; // end addToList fn
 
 	render() {
 		return(
 			<div className="col-6">
-				<form onSubmit={this.handleSubmit}>
+				<form onSubmit={this.addToList}>
 					<div className="form-group">
 						<label>User Name:</label>
 						<input value={this.state.userName} onChange={this.handleFormChange} type="text" className="form-control" id="userName" placeholder="Name or User Name"/>

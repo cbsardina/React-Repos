@@ -23,7 +23,7 @@ export default class PlayList extends Component {
 	render() {
 		return(
 			<div className="col-6">
-				{this.props.map((s) => {
+				{this.props.sng.map((s) => {
 					return (
 						<PlayListItem key={s.songs} sng={s}/>
 					)
